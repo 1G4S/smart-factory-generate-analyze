@@ -1,11 +1,4 @@
 import pyodbc
-from dotenv import load_dotenv
-import os
-load_dotenv()
-
-DRIVER=os.getenv('DRIVER')
-SERVER=os.getenv('SERVER')
-DATABASE=os.getenv('DATABASE')
 
 def connect_db(driver, server, database):
     """
