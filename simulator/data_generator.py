@@ -122,7 +122,7 @@ def generate_machines_data(amount_of_rows, start_date, conn, machines_id, failur
                     else:
                         is_good, is_scrap = 0, 1
 
-                    production_output_insertion(conn, machine, product_id, is_good, is_scrap)
+                    production_output_insertion(conn, machine, product_id, date_key, start_date, is_good, is_scrap)
                     rows_count_production += 1
 
             if random.random() < 0.001:
