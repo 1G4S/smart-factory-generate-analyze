@@ -75,10 +75,10 @@ def machine_events_update(conn, end_time, machine_id):
     print(f'[LOG]: Update in MachineEvents: MachineID :{machine_id} '
           f' | EndTime: {end_time}')
 
-def production_output_insertion(conn, machine_id, product_id, is_good, is_scrap):
+def production_output_insertion(conn, machine_id, product_id, date_key, timestamp, is_good, is_scrap):
     sql_query = """
-    INSERT INTO fct_ProductionOutput (MachineID, ProductID, IsGood, IsScrap)
-    VALUES (?, ?, ?, ?)
+    INSERT INTO fct_ProductionOutput (MachineID, ProductID, DateKey, Timestamp, IsGood, IsScrap)
+    VALUES (?, ?, ?, ?, ?, ?)
     """
     cursor = conn.cursor()
-    cursor.execute(sql_query, machine_id, product_id, is_good, is_scrap)
+    cursor.execute(sql_query, machine_id, product_id, date_key, timestamp, is_good, is_scrap)
