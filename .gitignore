@@ -1,0 +1,6 @@
+.env
+.venv
+.idea
+main.py
+database/__pycache__/
+simulator/__pycache__/
